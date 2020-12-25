@@ -1,0 +1,8 @@
+42c42
+<     push(@tagkinds, "$TYPE[$i]-B");
+---
+>     push(@tagkinds, "B-$TYPE[$i]");
+44c44
+<     push(@tagkinds, "$TYPE[$i]-I");
+---
+>     push(@tagkinds, "I-$TYPE[$i]");
