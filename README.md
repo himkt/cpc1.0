@@ -1,8 +1,8 @@
 # Cookpad Parsed Corpus v1.0
 
 Cookpad Parsed Corpus (CPC) is a dataset of linguistically annotated recipes written in Japanese.
-We annotated titles and cooking steps of recipes with morphemes, named entities, and dependency relations.
-Each recipe in CPC was randomly extracted from [Cookpad Recipe Dataset](https://www.aclweb.org/anthology/L16-1389/).
+We annotated the titles and cooking steps of recipes with morphemes, named entities, and dependency relations.
+Each recipe in the CPC was randomly extracted from the [Cookpad Recipe Dataset](https://www.aclweb.org/anthology/L16-1389/).
 
 This repository consists of a set of scripts that were used in the following paper:
 
@@ -12,42 +12,42 @@ This repository consists of a set of scripts that were used in the following pap
 # 1. Download dataset
 
 First of all, you have to download cpc1.0.
-Please contact to jun-harashima@cookpad.com and himkt@cookpad.com for requesting the dataset.
-We will send you a URL to download `cpc1.0.zip`.
+Please contact to jun-harashima@cookpad.com and himkt@cookpad.com to request the dataset.
+They will send you a URL to download `cpc1.0.zip`.
 
 After downloading and extracting the zip file, place it at the root of this repository.
 
 
 # 2. Quick start
 
-Using Docker, you can replicate our experiments simply by:
+Using Docker, you can conduct the experiments in the paper simply as follows:
 
 ```
 # Please make sure that `cpc1.0` exists at the root of the repository.
-# The output of `ls` should be:
+# The output of `ls` should be as follows:
 #
 #  > ls
 #  Dockerfile     Makefile       README.md      cpc1.0         poetry.lock    pyproject.toml
 #
 
 docker build -t cookpad/cpc1.0 .
-docker run --rm -t cookpad/cpc1.0 poetry run python bin/summary.py  # show basic staticstics of CPC.
+docker run --rm -t cookpad/cpc1.0 poetry run python bin/summary.py  # show basic statistics of CPC.
 docker run --rm -t cookpad/cpc1.0 make
 ```
 
 Note that the results of the commands could be slightly different from those reported in the paper.
 
 
-# 3. Setup manually
+# 3. Set up environment manually
 
-If you want to run experiments on your local environment,
+If you want to run experiments in your local environment,
 you have to install [MeCab](https://taku910.github.io/mecab/),
 [CaboCha](https://taku910.github.io/cabocha/),
 and [KyTea](http://www.phontron.com/kytea/index-ja.html).
 
-After installing these softwares, next step is to setup Python environment.
+After installing this software, the next step is to setup a Python environment.
 We use `poetry` for dependency management.
-You can install poetry and create Python environment by the following commands.
+You can install poetry and create a Python environment using the following commands.
 
 ```
 pip install poetry  # install poetry
@@ -55,24 +55,24 @@ poetry install  # install libraries
 make  # run experiments
 ```
 
-# 4. Usage of scripts
+# 4. Use of scripts
 
-We recommend to launch bash on Docker by `docker run --rm cookpad/cpc1.0 -it bash` and run each command described below.
+We recommend launching bash on Docker using `docker run --rm cookpad/cpc1.0 -it bash` and running each command described below.
 
 ## 4.1 Corpus statistics
 
 `poetry run python bin/summary.py`
 
-## 4.2 Splitting dataset
+## 4.2 Split the datase
 
-`make split` divides our corpus into 400 recipes for a training set, 50 recipes for a validation set,
-and 50 recipes for a test set.
+`make split` divides the corpus into 400 recipes for the training set, 50 recipes for the validation set,
+and 50 recipes for the test set.
 
 ## 4.3 Morphological analysis
 
 ```
 make mecab  # for morphological analysis
-make mecab-learn  # training a model
+make mecab-learn  # for training a model
 make macab-test-gen  # for evaluation
 make mecab-eval  # for evaluation
 ```
@@ -88,9 +88,10 @@ make pwner-eval
 
 ** Note **
 
-Besides the PWNER, a named-entity recognizer based on [Lample+, 2016](https://www.aclweb.org/anthology/N16-1030/) was also evaluated in our experiments.
-However, we do not contain any scripts for the recognizer in this repository
-because we implemented it using [pyner](https://github.com/himkt/pyner), which depends on obsolete softwares.
+In addition to the PWNER, a named-entity recognizer based on [Lample+, 2016](https://www.aclweb.org/anthology/N16-1030/)
+was also evaluated in the experiments in the paper.
+However, we do not include any scripts for the recognizer in this repository
+because we implemented it using [pyner](https://github.com/himkt/pyner), which depends on obsolete software.
 
 ## 4.5 Dependency parsing
 
@@ -102,9 +103,9 @@ make cabocha-eval
 ```
 
 
-# 6. Citing CPC
+# 5. Citing CPC
 
-If you use our dataset for your research, please cite the following paper:
+If you use CPC for your research, please cite the following paper:
 
 ```
 @inproceedings{Harashima2020,
