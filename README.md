@@ -63,7 +63,7 @@ We recommend launching bash on Docker using `docker run --rm cookpad/cpc1.0 -it 
 
 `poetry run python bin/summary.py`
 
-## 4.2 Split the datase
+## 4.2 Split the dataset
 
 `make split` divides the corpus into 400 recipes for the training set, 50 recipes for the validation set,
 and 50 recipes for the test set.
@@ -105,7 +105,7 @@ make cabocha-eval
 
 # 5. Citing CPC
 
-If you use CPC for your research, please cite the following paper:
+If you use the CPC for your research, please cite the following paper:
 
 ```
 @inproceedings{Harashima2020,
