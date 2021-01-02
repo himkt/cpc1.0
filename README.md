@@ -92,6 +92,7 @@ In addition to the PWNER, a named-entity recognizer based on [Lample+, 2016](htt
 was also evaluated in the experiments in the paper.
 However, we do not include any scripts for the recognizer in this repository
 because we implemented it using [pyner](https://github.com/himkt/pyner), which depends on obsolete software.
+If you want to train a BiLSTM-CRF model, please read the [doc](https://github.com/himkt/pyner/blob/master/docs/CPC1.0.md).
 
 ## 4.5 Dependency parsing
 
