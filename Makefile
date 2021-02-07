@@ -11,6 +11,12 @@ eval: mecab-eval pwner-eval cabocha-eval
 split:
 	poetry run python bin/split_dataset.py --corpus-dir cpc1.0 --output-dir outputs --proportion 8:1:1
 
+split-summary:
+	make split
+	poetry run python bin/summary.py --corpus-root outputs/train
+	poetry run python bin/summary.py --corpus-root outputs/valid
+	poetry run python bin/summary.py --corpus-root outputs/test
+
 mecab:
 	poetry run python bin/build_mecab.py --data-dir outputs/train --output-dir outputs/mecab
 	poetry run python bin/build_mecab.py --data-dir outputs/valid --output-dir outputs/mecab
@@ -94,7 +100,7 @@ pwner-learn:
 
 cabocha-learn:
 	# train
-	`cabocha-config --libexecdir`/cabocha-learn outputs/cabocha/cabocha.train outputs/cabocha/cookpad.cabocha
+	`cabocha-config --libexecdir`/cabocha-learn outputs/cabocha/cabocha.train outputs/cabocha/cookpad.cabocha -M /tmp/dep.ipa.txt
 	# infer
 	cabocha -I2 -f1 \
 		< outputs/cabocha/testb.sent \
