@@ -27,7 +27,7 @@ Using Docker, you can conduct the experiments in the paper simply as follows:
 # The output of `ls` should be as follows:
 #
 #  > ls
-#  Dockerfile     Makefile       README.md      cpc1.0         poetry.lock    pyproject.toml
+#  Dockerfile     Makefile       README.md      bin            cpc1.0         poetry.lock    pyproject.toml setup.cfg      static
 #
 
 docker build -t cookpad/cpc1.0 .
