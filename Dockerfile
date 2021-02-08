@@ -27,8 +27,11 @@ RUN locale-gen ja_JP.UTF-8
 WORKDIR /work
 COPY ./pyproject.toml ./pyproject.toml
 COPY ./poetry.lock    ./poetry.lock
-RUN  pip3 install poetry
-RUN  poetry install
+
+# Python
+RUN pip3 install -U pip
+RUN pip3 install poetry
+RUN poetry install
 
 # MeCab
 RUN apt update -y && \
