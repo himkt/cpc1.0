@@ -57,7 +57,7 @@ make  # run experiments
 
 # 4. Use of scripts
 
-We recommend launching bash on Docker using `docker run --rm cookpad/cpc1.0 -it bash` and running each command described below.
+We recommend launching bash on Docker using `docker run -it --rm cookpad/cpc1.0 bash` and running each command described below.
 
 ## 4.1 Corpus statistics
 
