@@ -12,7 +12,7 @@ numpy.random.seed(0)
 
 
 @click.command()
-@click.option("--corpus-dir", type=str, default="./recipes")
+@click.option("--corpus-dir", type=str, default="./cpc1.0")
 @click.option("--output-dir", type=str, default="./outputs")
 @click.option("--proportion", type=str, default="8:1:1")
 def main(corpus_dir: str, output_dir: str, proportion: str):
