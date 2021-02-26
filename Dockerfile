@@ -62,6 +62,8 @@ RUN wget "https://drive.google.com/uc?export=download&id=${CRFPP}" -O CRF++-0.58
       && make install
 
 # CaboCha
+WORKDIR /tmp
+RUN wget https://raw.githubusercontent.com/taku910/cabocha/a5d55a3c304a34bfcea170c30bcc9fcd4a62504f/model/dep.ipa.txt
 RUN wget --save-cookies=/tmp/cookie "https://drive.google.com/uc?export=download&id=${CABOCHA}" > /dev/null \
       && wget --load-cookies=/tmp/cookie "https://drive.google.com/uc?export=download&confirm=$(awk '/_warning_/ {print $NF}' /tmp/cookie)&id=${CABOCHA}" -O cabocha-0.69.tar.bz2 \
       && tar jxf cabocha-0.69.tar.bz2 && cd cabocha-0.69 \
