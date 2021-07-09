@@ -110,10 +110,19 @@ If you use the CPC for your research, please cite the following paper:
 
 ```
 @inproceedings{Harashima2020,
- author    = "Jun Harashima and Makoto Hiramatsu",
- title     = "{Cookpad Parsed Corpus: Linguistic Annotations of Japanese Recipes}",
- booktitle = "Proceedings of the 14th Linguistic Annotation Workshop (LAW 2020)",
- pages     = "87-92",
- year      = "2020",
+  author    = "Jun Harashima and Makoto Hiramatsu",
+  title     = "{Cookpad Parsed Corpus: Linguistic Annotations of Japanese Recipes}",
+  booktitle = "Proceedings of the 14th Linguistic Annotation Workshop (LAW 2020)",
+  pages     = "87-92",
+  year      = "2020",
+}
+```
+
+```
+@improceedings{Hiramatsu2021,
+  author    = "平松 淳 and 原島 純",
+  title     = "レシピ解析の現状と課題: Cookpad Parsed Corpus を例として",
+  booktitle = "言語処理学会年次大会",
+  year      = "2021",
 }
 ```
